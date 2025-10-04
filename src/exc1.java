@@ -114,13 +114,24 @@ public class exc1 {
     // Задача 1. Вывод чисел в обратном порядке
     public String reverseListNums(int x) {
         StringBuilder result = new StringBuilder();
-        for (int i = x; i >= 0; i--) {
-            result.append(i); // Добавляем число
-            if (i > 0) {
-                result.append(" "); // Добавляем пробел между числами
+        if (x >= 0) {
+            // Для положительных
+            for (int i = x; i >= 0; i--) {
+                result.append(i);
+                if (i > 0) {
+                    result.append(" ");
+                }
+            }
+        } else {ч
+            // Для отрицательных
+            for (int i = x; i <= 0; i++) {
+                result.append(i);
+                if (i < 0) {
+                    result.append(" ");
+                }
             }
         }
-        return result.toString(); // Возвращаем готовую строку
+        return result.toString();
     }
 
     // Задача 2. Возведение числа в степень
@@ -300,14 +311,14 @@ public class exc1 {
         System.out.println("Задача 2: Проверка положительности числа");
         int userInput = inputInt("Введите целое число: ");
         boolean result = isPositive(userInput);
-        System.out.printf("Число %d положительное: %b%n%n", userInput, result);
+        System.out.println("Число " + userInput + " положительное: " + result + "\n");
     }
 
     private void demonstrateIs2Digits() {
         System.out.println("Задача 3: Проверка двузначности числа");
         int userInput = inputInt("Введите целое число: ");
         boolean result = is2Digits(userInput);
-        System.out.printf("Число %d двузначное: %b%n%n", userInput, result);
+        System.out.println("Число " + userInput + " двузначное: " + result + "\n");
     }
 
     private void demonstrateIsDivisor() {
@@ -316,7 +327,7 @@ public class exc1 {
         int a = inputInt("Введите первое число: ");
         int b = inputInt("Введите второе число: ");
         boolean result = isDivisor(a, b);
-        System.out.printf("Одно из чисел %d и %d делит другое: %b%n%n", a, b, result);
+        System.out.printf("Одно из чисел " + a + " и " + b + " делит другое: " + result + "\n");
     }
 
     private void demonstrateIsEqual() {
@@ -326,14 +337,14 @@ public class exc1 {
         int b = inputInt("Введите второе число: ");
         int c = inputInt("Введите третье число: ");
         boolean result = isEqual(a, b, c);
-        System.out.printf("Все три числа (%d, %d, %d) равны: %b%n%n", a, b, c, result);
+        System.out.printf("Все три числа (" + a + ", " + b + ", " + c + ") равны: " + result + "\n");
     }
 
     private void demonstrateIs35() {
         System.out.println("Задача 1: Тридцать пять");
         int number = inputInt("Введите целое число: ");
         boolean result = is35(number);
-        System.out.printf("Число %d делится на 3 или на 5 (но не на оба): %b%n%n", number, result);
+        System.out.println("Число " + number + " делится на 3 или на 5 (но не на оба): " + result + "\n");
     }
 
     private void demonstrateMax3() {
@@ -343,7 +354,7 @@ public class exc1 {
         int b = inputInt("Введите второе число: ");
         int c = inputInt("Введите третье число: ");
         int result = max3(a, b, c);
-        System.out.printf("Максимальное из чисел (%d, %d, %d): %d%n%n", a, b, c, result);
+        System.out.println("Максимальное из чисел (" + a + ", " + b + ", " + c + "): " + result + "\n");
     }
 
     private void demonstrateSum2() {
@@ -352,7 +363,7 @@ public class exc1 {
         int a = inputInt("Введите первое число: ");
         int b = inputInt("Введите второе число: ");
         int result = sum2(a, b);
-        System.out.printf("Результат суммы %d + %d: %d%n%n", a, b, result);
+        System.out.println("Результат суммы " + a + " + " + b + ": " + result + "\n");
     }
 
     private void demonstrateAge() {
@@ -382,14 +393,14 @@ public class exc1 {
         int base = inputInt("Введите основание: ");
         int exponent = inputInt("Введите степень: ");
         int result = pow(base, exponent);
-        System.out.printf("Результат: %d^%d = %d%n%n", base, exponent, result);
+        System.out.println("Результат: " + base + "^" + exponent + " = " + result + "\n");
     }
 
     private void demonstrateEqualNum() {
         System.out.println("Задача 3: Одинаковость цифр");
         int number = inputInt("Введите целое число: ");
         boolean result = equalNum(number);
-        System.out.printf("Все цифры числа %d одинаковы: %b%n%n", number, result);
+        System.out.println("Все цифры числа " + number + " одинаковы: " + result + "\n");
     }
 
     private void demonstrateRightTriangle() {
